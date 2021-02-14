@@ -8,7 +8,7 @@ export class ShopService {
   constructor(private readonly httpService : HttpService){};
 
   async getAll(): Promise<Array<ShopDto>> {
-    let response = await this.httpService.get<ShopEntity>('http://localhost:3002/shop/shops').toPromise();
+    let response = await this.httpService.get<ShopEntity>('http://apishop-env.eba-nx8fbca5.eu-west-1.elasticbeanstalk.com/shop/shops').toPromise();
     return response.data.shops;
     }
 }

@@ -8,7 +8,7 @@ export class OfferService {
   constructor(private readonly httpService : HttpService){};
 
   async findByIdShop(id): Promise<Array<OfferDto>> {
-    let response = await this.httpService.get<OfferEntity>(`http://localhost:3001/offer/shop/${id}`).toPromise();
+    let response = await this.httpService.get<OfferEntity>(`http://apioffer-env.eba-a92bh3tp.eu-west-1.elasticbeanstalk.com/offer/shop/${id}`).toPromise();
     return response.data.offers;
   }
 }
